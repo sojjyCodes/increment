@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import "./App.css";
-
 export function Increase() {
-    alert("Increased")
+    alert("Increased");
 }
 
 export function Decrease() {
