@@ -13,7 +13,7 @@ function App(props) {
     const count = 0;
     return (
         <div className="App">
-            <Container>
+            <Container style={styles.container}>
                 <Navbar expand="lg" variant="dark" bg="info" style={styles.nav}>
                     <Navbar.Brand href="#" style={styles.title}>
                         Number Increment
@@ -44,6 +44,10 @@ function App(props) {
 }
 
 const styles = {
+    container: {
+        backgroundColor: "lightgreen"
+    },
+
     title: {
         fontSize: "35px",
         marginLeft: "500px",
