@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
-import App from "./App";
+import App, { AlertDismiss } from "./App";
+import AlerDismiss from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <AlertDismiss />
     </React.StrictMode>,
     document.getElementById("root")
 );
