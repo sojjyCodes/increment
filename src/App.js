@@ -70,7 +70,9 @@ export default class App extends React.Component {
                     >
                         Decrease
                     </Button>
-                    <p style={styles.error}>{this.state.error}</p>
+                    <center>
+                        <p style={styles.error}>{this.state.error}</p>
+                    </center>
                 </div>
             </div>
         );
@@ -108,10 +110,10 @@ const styles = {
         marginTop: "260px",
     },
     error: {
-        fontSize: "50px",
-        marginleft: "100px",
-        placeContent: "center",
-        marginLeft: "550px",
+        backgroundColor: "red",
+        fontSize: "45px",
         marginTop: "20px",
+        marginLeft: "0",
+        marginRight: "0",
     },
 };
