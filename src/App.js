@@ -1,51 +1,67 @@
 import React, { Component } from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import "./App.css";
-export function Increase() {
-    alert("Increased");
-}
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0,
+        };
+    }
 
-export function Decrease() {
-    const count = 0;
-    alert("Decreased");
-}
-function App(props) {
-    const count = 0;
-    return (
-        <div className="App">
-            <Container style={styles.container}>
-                <Navbar expand="lg" variant="dark" bg="info" style={styles.nav}>
-                    <Navbar.Brand href="#" style={styles.title}>
-                        Number Increment
-                    </Navbar.Brand>
-                </Navbar>
-            </Container>
-            <div className="count">
-                <center>{count}</center>
+    increment() {
+        this.setState({
+            count: this.state.count + 1,
+        });
+    }
+
+    decrement() {
+        this.setState({
+            count: this.state.count - 1,
+        });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Container style={styles.container}>
+                    <Navbar
+                        expand="lg"
+                        variant="dark"
+                        bg="info"
+                        style={styles.nav}
+                    >
+                        <Navbar.Brand href="#" style={styles.title}>
+                            Number Increment
+                        </Navbar.Brand>
+                    </Navbar>
+                </Container>
+                <div className="count">
+                    <center>{this.state.count}</center>
+                </div>
+                <Button
+                    onClickCapture={() => this.increment(e)}
+                    variant="success"
+                    style={styles.button}
+                    className="button__text"
+                >
+                    Increase
+                </Button>
+                <Button
+                    onClick={() => this.decrement(e)}
+                    variant="danger"
+                    style={styles.button_2}
+                    className="button__text"
+                >
+                    Decrease
+                </Button>
             </div>
-            <Button
-                onClick={() => Increase()}
-                variant="success"
-                style={styles.button}
-                className="button__text"
-            >
-                Increase
-            </Button>
-            <Button
-                onClick={() => Decrease()}
-                variant="danger"
-                style={styles.button_2}
-                className="button__text"
-            >
-                Decrease
-            </Button>
-        </div>
-    );
+        );
+    }
 }
-
 const styles = {
     container: {
-        backgroundColor: "lightgreen"
+        borderColor: "lightgreen",
     },
 
     title: {
@@ -68,4 +84,3 @@ const styles = {
         marginTop: "300px",
     },
 };
-export default App;
