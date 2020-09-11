@@ -3,35 +3,17 @@ import { Container, Navbar, Button, Alert } from "react-bootstrap";
 import "./App.css";
 import { render } from "@testing-library/react";
 
-export function AlertDismiss() {
-    const [show, setShow] = useState(false);
-
-    if (show) {
-        return (
-            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-                <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-                <p>
-                    Change this and that and try again. Duis mollis, est non
-                    commodo luctus, nisi erat porttitor ligula, eget lacinia
-                    odio sem nec elit. Cras mattis consectetur purus sit amet
-                    fermentum.
-                </p>
-            </Alert>
-        );
-    }
-    return <AlertDismiss />;
-}
-
-render(<AlertDismiss />);
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             count: 0,
+            error: "",
         };
     }
 
     increment() {
+        this.state.error = "";
         this.setState({
             count: this.state.count + 1,
         });
@@ -46,10 +28,11 @@ export default class App extends React.Component {
         this.setState({
             count: this.state.count - 1,
         });
-        if (this.state.count === 0) {
+        if (this.state.count < 1) {
             this.setState({
-                count: this.state.count - 0,
+                count: (this.state.count = 0),
             });
+            this.state.error = "You have have reached the limit";
         }
     }
 
@@ -87,6 +70,7 @@ export default class App extends React.Component {
                     >
                         Decrease
                     </Button>
+                    {this.state.error}
                 </div>
             </div>
         );
