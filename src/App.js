@@ -76,7 +76,18 @@ export default class App extends React.Component {
                 </Container>
                 <footer className="footer">
                     <p id="footer-text">
-                        <center>Created with love by sojjyCodes ©2020</center>
+                        <center>
+                            {" "}
+                            <strong>Increment Number</strong> by{" "}
+                            <a href="https://github.com/sojjyCodes">
+                                Ebenezer Alagbe.{" "}
+                            </a>{" "}
+                            The source code is licensed
+                            {""}
+                            <a href="http://opensource.org/licenses/mit-license.php">
+                                {""} MIT
+                            </a>
+                        </center>
                     </p>
                 </footer>
             </div>
