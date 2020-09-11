@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import "./App.css";
 export default class App extends React.Component {
@@ -13,6 +13,9 @@ export default class App extends React.Component {
         this.setState({
             count: this.state.count + 1,
         });
+        if (this.state.count === 10) {
+            alert("Maximum Increment reached");
+        }
     }
 
     decrement() {
@@ -38,23 +41,24 @@ export default class App extends React.Component {
                 </Container>
                 <div className="count">
                     <center>{this.state.count}</center>
+
+                    <Button
+                        onClick={() => this.increment()}
+                        variant="success"
+                        style={styles.button}
+                        className="button__text"
+                    >
+                        Increase
+                    </Button>
+                    <Button
+                        onClick={() => this.decrement()}
+                        variant="danger"
+                        style={styles.button_2}
+                        className="button__text"
+                    >
+                        Decrease
+                    </Button>
                 </div>
-                <Button
-                    onClickCapture={() => this.increment(e)}
-                    variant="success"
-                    style={styles.button}
-                    className="button__text"
-                >
-                    Increase
-                </Button>
-                <Button
-                    onClick={() => this.decrement(e)}
-                    variant="danger"
-                    style={styles.button_2}
-                    className="button__text"
-                >
-                    Decrease
-                </Button>
             </div>
         );
     }
