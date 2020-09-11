@@ -14,7 +14,9 @@ export default class App extends React.Component {
             count: this.state.count + 1,
         });
         if (this.state.count === 10) {
-            alert("Maximum Increment reached");
+            this.setState({
+                count: this.state.count + 0,
+            });
         }
     }
 
@@ -22,6 +24,11 @@ export default class App extends React.Component {
         this.setState({
             count: this.state.count - 1,
         });
+        if (this.state.count === 0) {
+            this.setState({
+                count: this.state.count - 0,
+            });
+        }
     }
 
     render() {
@@ -40,7 +47,7 @@ export default class App extends React.Component {
                     </Navbar>
                 </Container>
                 <div className="count">
-                    <center>{this.state.count}</center>
+                    <center style={styles.count}>{this.state.count}</center>
 
                     <Button
                         onClick={() => this.increment()}
@@ -72,11 +79,18 @@ const styles = {
         fontSize: "35px",
         marginLeft: "500px",
     },
+    count: {
+        fontSize: "60px",
+        marginleft: "100px",
+        placeContent: "center",
+        marginLeft: "100px",
+        marginTop: "260px",
+    },
     button: {
         fontSize: "30px",
         height: "60px",
         width: "150px",
-        marginTop: "300px",
+        marginTop: "115px",
         marginLeft: "690px",
     },
     button_2: {
@@ -85,6 +99,6 @@ const styles = {
         height: "60px",
         width: "150px",
         marginLeft: "10px",
-        marginTop: "300px",
+        marginTop: "115px",
     },
 };
