@@ -8,6 +8,14 @@ export default class App extends React.Component {
         super(props);
         this.state = {
             count: 0,
+            count_style: {
+                color: "black",
+                fontSize: "60px",
+                marginleft: "100px",
+                placeContent: "center",
+                marginLeft: "80px",
+                marginTop: "260px",
+            },
             error: "",
         };
     }
@@ -17,11 +25,6 @@ export default class App extends React.Component {
         this.setState({
             count: this.state.count + 1,
         });
-        if (this.state.count === 10) {
-            this.setState({
-                count: this.state.count + 0,
-            });
-        }
     }
 
     decrement() {
@@ -33,6 +36,7 @@ export default class App extends React.Component {
                 count: (this.state.count = 0),
             });
             this.state.error = "Sorry, you can't go less than zero!";
+            this.state.count_style.color = "red";
         }
     }
 
@@ -52,7 +56,9 @@ export default class App extends React.Component {
                     </Navbar>
                 </Container>
                 <div className="count">
-                    <center style={styles.count}>{this.state.count}</center>
+                    <center style={this.state.count_style}>
+                        {this.state.count}
+                    </center>
 
                     <Button
                         onClick={() => this.increment()}
@@ -85,7 +91,7 @@ export default class App extends React.Component {
                             The source code is licensed
                             {""}
                             <a href="http://opensource.org/licenses/mit-license.php">
-                                {""} MIT
+                                {""} MIT.
                             </a>
                         </center>
                     </p>
@@ -96,7 +102,7 @@ export default class App extends React.Component {
 }
 const styles = {
     title: {
-        marginLeft: "500px",
+        marginLeft: "470px",
     },
     button: {
         fontSize: "25px",
@@ -120,7 +126,7 @@ const styles = {
         color: "red",
         fontSize: "20px",
         marginTop: "20px",
-        marginLeft: "0",
+        marginLeft: "100px",
         marginRight: "0",
     },
 };
