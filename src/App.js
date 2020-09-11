@@ -32,7 +32,7 @@ export default class App extends React.Component {
             this.setState({
                 count: (this.state.count = 0),
             });
-            this.state.error = "You have have reached the limit";
+            this.state.error = "Sorry, you can't go less than zero!";
         }
     }
 
@@ -47,7 +47,7 @@ export default class App extends React.Component {
                         style={styles.nav}
                     >
                         <Navbar.Brand href="#" style={styles.title}>
-                            Number Increment
+                            <h1 class="head"> Number Increment</h1>
                         </Navbar.Brand>
                     </Navbar>
                 </Container>
@@ -58,7 +58,6 @@ export default class App extends React.Component {
                         onClick={() => this.increment()}
                         variant="success"
                         style={styles.button}
-                        className="button__text"
                     >
                         Increase
                     </Button>
@@ -66,52 +65,49 @@ export default class App extends React.Component {
                         onClick={() => this.decrement()}
                         variant="danger"
                         style={styles.button_2}
-                        className="button__text"
                     >
                         Decrease
                     </Button>
+                </div>
+                <Container>
                     <center>
                         <p style={styles.error}>{this.state.error}</p>
                     </center>
-                </div>
+                </Container>
+                <footer className="footer">
+                    <p id="footer-text">
+                        <center>Created with love by sojjyCodes ©2020</center>
+                    </p>
+                </footer>
             </div>
         );
     }
 }
 const styles = {
-    container: {
-        borderColor: "lightgreen",
-    },
-
     title: {
-        fontSize: "35px",
         marginLeft: "500px",
     },
     button: {
-        fontSize: "30px",
-        height: "60px",
-        width: "150px",
-        marginTop: "115px",
-        marginLeft: "690px",
+        fontSize: "25px",
+        marginTop: "50px",
+        marginLeft: "740px",
     },
     button_2: {
-        position: "fixed",
-        fontSize: "30px",
-        height: "60px",
-        width: "150px",
-        marginLeft: "10px",
-        marginTop: "115px",
+        fontSize: "25px",
+        marginLeft: "15px",
+        marginTop: "50px",
     },
     count: {
+        color: "red",
         fontSize: "60px",
         marginleft: "100px",
         placeContent: "center",
-        marginLeft: "100px",
+        marginLeft: "80px",
         marginTop: "260px",
     },
     error: {
-        backgroundColor: "red",
-        fontSize: "45px",
+        color: "red",
+        fontSize: "20px",
         marginTop: "20px",
         marginLeft: "0",
         marginRight: "0",

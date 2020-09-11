@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 
-* {
+*  div {
     font-family: "Bangers", cursive;
 }
-.error {
-    
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: grey;
 }
