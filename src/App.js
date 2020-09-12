@@ -24,6 +24,19 @@ export default class App extends React.Component {
         this.setState({
             count: this.state.count + 1,
         });
+        if (this.state.count >= 0) {
+            let style = {
+                color: "black",
+                fontSize: "60px",
+                marginleft: "100px",
+                placeContent: "center",
+                marginLeft: "80px",
+                marginTop: "260px",
+            };
+            this.state.count_style = style;
+        }
+
+        this.state.count_style = this.state.count_style;
     }
 
     decrement() {
