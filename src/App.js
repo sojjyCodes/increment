@@ -46,7 +46,7 @@ export default class App extends React.Component {
             });
             this.state.error = "Sorry, you can't go less than zero!";
         }
-        if (this.state.count <= 1) {
+        if (this.state.count == 1) {
             let style = {
                 color: "red",
                 fontSize: "60px",
