@@ -8,12 +8,11 @@ export default class App extends React.Component {
         this.state = {
             count: 0,
             count_style: {
-                color: "red",
+                color: "black",
                 fontSize: "60px",
-                marginleft: "100px",
                 placeContent: "center",
-                marginLeft: "80px",
-                marginTop: "260px",
+                marginLeft: "30px",
+                marginTop: "250px",
             },
             error: "",
         };
@@ -24,19 +23,17 @@ export default class App extends React.Component {
         this.setState({
             count: this.state.count + 1,
         });
-        if (this.state.count >= 0) {
+
+        if (this.state.count == 0) {
             let style = {
                 color: "black",
                 fontSize: "60px",
-                marginleft: "100px",
                 placeContent: "center",
-                marginLeft: "80px",
-                marginTop: "260px",
+                marginLeft: "30px",
+                marginTop: "250px",
             };
             this.state.count_style = style;
         }
-
-        this.state.count_style = this.state.count_style;
     }
 
     decrement() {
@@ -49,14 +46,13 @@ export default class App extends React.Component {
             });
             this.state.error = "Sorry, you can't go less than zero!";
         }
-        if (this.state.count === 0) {
+        if (this.state.count <= 1) {
             let style = {
                 color: "red",
                 fontSize: "60px",
-                marginleft: "100px",
                 placeContent: "center",
-                marginLeft: "80px",
-                marginTop: "260px",
+                marginLeft: "30px",
+                marginTop: "250px",
             };
             this.state.count_style = style;
         }
@@ -72,9 +68,13 @@ export default class App extends React.Component {
                         bg="info"
                         style={styles.nav}
                     >
-                        <center>
-                            <h1 class="head"> Number Increment</h1>
-                        </center>
+                        <section>
+                            <div class="container">
+                                <div class="mx-auto bg-bulma">
+                                    <h4 className="head">Number increment</h4>
+                                </div>
+                            </div>
+                        </section>
                     </Navbar>
                 </Container>
                 <div className="count">
@@ -125,32 +125,28 @@ export default class App extends React.Component {
     }
 }
 const styles = {
-    title: {
-        marginLeft: "470px",
+    container: {
+        height: "10px",
     },
+    // title: {
+
+    // },
     button: {
-        fontSize: "25px",
-        marginTop: "50px",
-        marginLeft: "740px",
+        fontSize: "20px",
+        marginLeft: "700px",
     },
     button_2: {
-        fontSize: "25px",
+        fontSize: "20px",
         marginLeft: "15px",
-        marginTop: "50px",
-    },
-    count: {
-        color: "red",
-        fontSize: "60px",
-        marginleft: "100px",
-        placeContent: "center",
-        marginLeft: "80px",
-        marginTop: "260px",
+        marginTop: "0px",
     },
     error: {
         color: "red",
         fontSize: "20px",
-        marginTop: "0px",
-        marginLeft: "100px",
+        marginTop: "20px",
+        marginLeft: "30px",
         marginRight: "0",
+
+        placeContent: "center",
     },
 };
