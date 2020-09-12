@@ -12,7 +12,7 @@ export default class App extends React.Component {
                 fontSize: "60px",
                 placeContent: "center",
                 marginLeft: "30px",
-                marginTop: "250px",
+                marginTop: "280px",
             },
             error: "",
         };
@@ -30,7 +30,7 @@ export default class App extends React.Component {
                 fontSize: "60px",
                 placeContent: "center",
                 marginLeft: "30px",
-                marginTop: "250px",
+                marginTop: "280px",
             };
             this.state.count_style = style;
         }
@@ -46,7 +46,7 @@ export default class App extends React.Component {
             });
             this.state.error = "Sorry, you can't go less than zero!";
         }
-        if (this.state.count == 1) {
+        if (this.state.count < 1) {
             let style = {
                 color: "red",
                 fontSize: "60px",
@@ -134,6 +134,7 @@ const styles = {
     button: {
         fontSize: "20px",
         marginLeft: "700px",
+        marginTop: "",
     },
     button_2: {
         fontSize: "20px",
