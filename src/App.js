@@ -1,8 +1,7 @@
 import React, { Component, useState } from "react";
 import { Container, Navbar, Button, Alert } from "react-bootstrap";
 import "./App.css";
-import { render } from "@testing-library/react";
-
+import { render } from "@testing-library/react"; // dfdhdfvjfdnhfgj
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -36,7 +35,17 @@ export default class App extends React.Component {
                 count: (this.state.count = 0),
             });
             this.state.error = "Sorry, you can't go less than zero!";
-            this.state.count_style.color = "red";
+        }
+        if (this.state.count === 0) {
+            let style = {
+                color: "red",
+                fontSize: "60px",
+                marginleft: "100px",
+                placeContent: "center",
+                marginLeft: "80px",
+                marginTop: "260px",
+            };
+            this.state.count_style = style;
         }
     }
 
