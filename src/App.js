@@ -8,7 +8,7 @@ export default class App extends React.Component {
         this.state = {
             count: 0,
             count_style: {
-                color: "black",
+                color: "red",
                 fontSize: "60px",
                 marginleft: "100px",
                 placeContent: "center",
@@ -72,9 +72,9 @@ export default class App extends React.Component {
                         bg="info"
                         style={styles.nav}
                     >
-                        <Navbar.Brand href="#" style={styles.title}>
+                        <center>
                             <h1 class="head"> Number Increment</h1>
-                        </Navbar.Brand>
+                        </center>
                     </Navbar>
                 </Container>
                 <div className="count">
@@ -99,7 +99,9 @@ export default class App extends React.Component {
                 </div>
                 <Container>
                     <center>
-                        <p style={styles.error}>{this.state.error}</p>
+                        <p style={styles.error} class="text-10px">
+                            {this.state.error}
+                        </p>
                     </center>
                 </Container>
                 <footer className="footer">
@@ -147,7 +149,7 @@ const styles = {
     error: {
         color: "red",
         fontSize: "20px",
-        marginTop: "20px",
+        marginTop: "0px",
         marginLeft: "100px",
         marginRight: "0",
     },
