@@ -14,7 +14,9 @@ footer {
     background-color: whitesmoke;
 }
 .head {
-    font-size: 30px;
+    font-size: 50px;
+    height: 35px;
+    margin-top: 0px;
     margin-left: 400px;
     color: white;
 }

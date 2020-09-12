@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Container, Navbar, Button, Alert } from "react-bootstrap";
 import "./App.css";
-import { render } from "@testing-library/react"; // dfdhdfvjfdnhfgj
+import { render } from "@testing-library/react";
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -9,10 +9,10 @@ export default class App extends React.Component {
             count: 0,
             count_style: {
                 color: "black",
-                fontSize: "60px",
+                fontSize: "50px",
                 placeContent: "center",
                 marginLeft: "30px",
-                marginTop: "280px",
+                marginTop: "285px",
             },
             error: "",
         };
@@ -27,10 +27,10 @@ export default class App extends React.Component {
         if (this.state.count == 0) {
             let style = {
                 color: "black",
-                fontSize: "60px",
+                fontSize: "50px",
                 placeContent: "center",
                 marginLeft: "30px",
-                marginTop: "280px",
+                marginTop: "285px",
             };
             this.state.count_style = style;
         }
@@ -46,13 +46,13 @@ export default class App extends React.Component {
             });
             this.state.error = "Sorry, you can't go less than zero!";
         }
-        if (this.state.count < 1) {
+        if (this.state.count <= 1) {
             let style = {
                 color: "red",
-                fontSize: "60px",
+                fontSize: "50px",
                 placeContent: "center",
                 marginLeft: "30px",
-                marginTop: "250px",
+                marginTop: "255px",
             };
             this.state.count_style = style;
         }
@@ -68,13 +68,9 @@ export default class App extends React.Component {
                         bg="info"
                         style={styles.nav}
                     >
-                        <section>
-                            <div class="container">
-                                <div class="mx-auto bg-bulma">
-                                    <h4 className="head">Number increment</h4>
-                                </div>
-                            </div>
-                        </section>
+                        <div class="container">
+                            <h4 className="head">Number increment</h4>
+                        </div>
                     </Navbar>
                 </Container>
                 <div className="count">
@@ -128,18 +124,15 @@ const styles = {
     container: {
         height: "10px",
     },
-    // title: {
-
-    // },
     button: {
         fontSize: "20px",
         marginLeft: "700px",
-        marginTop: "",
+        marginTop: "15px",
     },
     button_2: {
         fontSize: "20px",
         marginLeft: "15px",
-        marginTop: "0px",
+        marginTop: "15px",
     },
     error: {
         color: "red",
