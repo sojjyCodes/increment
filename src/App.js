@@ -71,7 +71,6 @@ export default class App extends React.Component {
                 <Container style={styles.container}>
                     <Navbar
                         expand="lg"
-                        variant="dark"
                         bg="info"
                         style={styles.nav}
                     >
@@ -135,6 +134,9 @@ export default class App extends React.Component {
     }
 }
 const styles = {
+    nav: {
+        height: "60px",
+    },
     container: {
         height: "10px",
     },
