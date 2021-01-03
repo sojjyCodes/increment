@@ -102,7 +102,9 @@ export default class App extends React.Component {
                 </div>
                 <Button
                     onClick={() => this.reset()}
-                    variant="warning">
+                    variant="warning"
+                    style={styles.reset}
+                >
                     RESET
                 </Button>
                 <Container>
@@ -146,13 +148,18 @@ const styles = {
         marginLeft: "15px",
         marginTop: "15px",
     },
+    reset: {
+        fontSize: "20px",
+        marginLeft: "755px",
+        marginTop: "10px",
+        width: "100px",
+    },
     error: {
         color: "red",
         fontSize: "20px",
         marginTop: "20px",
         marginLeft: "30px",
         marginRight: "0",
-
         placeContent: "center",
     },
 };
