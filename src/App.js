@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
 import "./App.css";
 
@@ -60,7 +60,9 @@ export default class App extends React.Component {
     }
 
     reset() {
-        this.state.count == 0;
+        this.setState({
+            count: 0,
+        });
     }
 
     render() {
@@ -98,7 +100,9 @@ export default class App extends React.Component {
                         Decrease
                     </Button>
                 </div>
-                <Button onClick={() => this.decrement()} variant="warning">
+                <Button
+                    onClick={() => this.reset()}
+                    variant="warning">
                     RESET
                 </Button>
                 <Container>
