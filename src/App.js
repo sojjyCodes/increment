@@ -1,7 +1,7 @@
-import React, { Component, useState } from "react";
-import { Container, Navbar, Button, Alert } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Navbar, Button } from "react-bootstrap";
 import "./App.css";
-import { render } from "@testing-library/react";
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -15,6 +15,7 @@ export default class App extends React.Component {
                 marginTop: "285px",
             },
             error: "",
+            reset: 0,
         };
     }
 
@@ -24,7 +25,7 @@ export default class App extends React.Component {
             count: this.state.count + 1,
         });
 
-        if (this.state.count == 0) {
+        if (this.state.count === 0) {
             let style = {
                 color: "black",
                 fontSize: "50px",
@@ -56,6 +57,10 @@ export default class App extends React.Component {
             };
             this.state.count_style = style;
         }
+    }
+
+    reset() {
+        this.state.count == 0;
     }
 
     render() {
@@ -93,6 +98,9 @@ export default class App extends React.Component {
                         Decrease
                     </Button>
                 </div>
+                <Button onClick={() => this.decrement()} variant="warning">
+                    RESET
+                </Button>
                 <Container>
                     <center>
                         <p style={styles.error} class="text-10px">
